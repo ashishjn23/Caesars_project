@@ -5,9 +5,8 @@
 int main(){
     FILE *fp;
     FILE *op;
-    int i,x=0,num,z=0;
+    int i,x=0,num;
     char buff[255],word[2];
-    int answer[255];
     fp = fopen("input.txt", "r");
     op = fopen("output.txt", "w");
     while(fscanf(fp,"%s",buff) != EOF){
@@ -20,14 +19,10 @@ int main(){
                 //printf("%s_",word);
                 num = atoi(word);
                 if(num <= 13){
-                    answer[z] = num + 77;
-                    z += 1;
-                    printf("%c",num + 77);
+                    fprintf(op,"%c",num + 77);
                 }
                 else{
-                    answer[z] = num + 51;
-                    z += 1;
-                    printf("%c",num + 51);
+                    fprintf(op,"%c",num + 51);
                 }
                 x = 0;
                 word[0] = '\0';
@@ -37,20 +32,16 @@ int main(){
         //printf("%s_",word);
         num = atoi(word);
         if(num <= 13){
-            printf("%c",num + 77);
-            answer[z] = num + 77;
-            z += 1;
+            fprintf(op,"%c",num + 77);
         }
         else{
-            printf("%c",num + 51);
-            answer[z] = num + 51;
-            z += 1;
+            fprintf(op,"%c",num + 51);
             
         }
         x = 0;
         word[0] = '\0';
         word[1] = '\0';
-        printf(" ");
+        fprintf(op," ");
     }
     
     fclose(fp);
