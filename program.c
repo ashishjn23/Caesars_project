@@ -16,7 +16,6 @@ int main(){
                 x = x + 1;
             }
             else if(buff[i] == '-'){
-                //printf("%s_",word);
                 num = atoi(word);
                 if(num <= 13){
                     fprintf(op,"%c",num + 77);
@@ -29,21 +28,18 @@ int main(){
                 word[1] = '\0';
             }
         }
-        //printf("%s_",word);
         num = atoi(word);
         if(num <= 13){
             fprintf(op,"%c",num + 77);
         }
         else{
             fprintf(op,"%c",num + 51);
-            
         }
         x = 0;
         word[0] = '\0';
         word[1] = '\0';
         fprintf(op," ");
     }
-    
     fclose(fp);
     fclose(op);
     return 0;
